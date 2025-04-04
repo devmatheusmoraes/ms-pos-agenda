@@ -1,4 +1,4 @@
-import axios from "axios";
+import api from "../../../api/axiosInstance";
 import { DeleteOutlined } from "@ant-design/icons";
 import Link from "antd/es/typography/Link";
 import { Button } from "antd";
@@ -25,8 +25,8 @@ const DeleteUser = ({ type, id }) => {
 
   const inputDelete = async () => {
     try {
-      const response = await axios.delete(
-        `http://localhost:8080${baseUrl}/deleteById/${id}`
+      const response = await api.delete(
+        `${baseUrl}/deleteById/${id}`
       );
       console.log(`Excluído com sucesso!`, response);
       alert(`Excluído com sucesso!`);

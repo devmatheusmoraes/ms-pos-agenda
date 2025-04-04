@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./listarclientes.css";
 import { Table } from "antd";
 import ViewUser from "../../../funcoes_usuario/exibir";
@@ -10,7 +10,7 @@ const Clientes = () => {
 
   const getClientes = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/customer/getAll`);
+      const response = await api.get(`/customer/getAll`);
       const data = response.data;
       setClientes(data);
     } catch (error) {

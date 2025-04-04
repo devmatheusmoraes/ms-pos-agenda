@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import InputMask from "react-input-mask";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -40,7 +40,7 @@ export default function FormularioCliente() {
   const onSubmit = async (data) => {
     console.log(data);
     try {
-      await axios.post("http://localhost:8080/customer/save", data);
+      await api.post("/customer/save", data);
       alert("Cliente salvo com sucesso!");
       navigate("/cliente");
     } catch (error) {

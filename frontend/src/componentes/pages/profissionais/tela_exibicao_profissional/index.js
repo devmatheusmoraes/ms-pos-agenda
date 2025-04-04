@@ -2,7 +2,7 @@ import "./exibicao.css";
 import {useParams} from "react-router-dom";
 import {useState, useEffect} from "react";
 import EditUser from "../../../funcoes_usuario/edicao";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 
 function ExibicaoProfissional() {
     const {id} = useParams();
@@ -10,8 +10,8 @@ function ExibicaoProfissional() {
     const [exibicao, setExibicao] = useState([]);
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:8080/professional/getById/${id}`)
+        api
+            .get(`/professional/getById/${id}`)
             .then((response) => {
                 setExibicao(response.data);
             })

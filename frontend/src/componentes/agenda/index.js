@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { message, Modal, Select, Spin } from "antd";
-import axios from "axios";
+import api from "../../api/axiosInstance";
 import moment from "moment";
 import GridAgenda from "../grid";
 
@@ -24,10 +24,10 @@ const Agendamento = () => {
                     clientesRes,
                     reservationsRes
                 ] = await Promise.all([
-                    axios.get("http://localhost:8080/professional/getAll"),
-                    axios.get("http://localhost:8080/scheduleConfiguration/getAll"),
-                    axios.get("http://localhost:8080/customer/getAll"),
-                    axios.get("http://localhost:8080/reservation/getAll")
+                    api.get("/professional/getAll"),
+                    api.get("/scheduleConfiguration/getAll"),
+                    api.get("/customer/getAll"),
+                    api.get("/reservation/getAll")
                 ]);
 
                 setProfissionais(profRes.data);
@@ -140,7 +140,7 @@ const Agendamento = () => {
         };
 
         try {
-            const response = await axios.post("http://localhost:8080/reservation/save", payload, {
+            const response = await api.post("/reservation/save", payload, {
                 headers: {
                     "Content-Type": "application/json",
                 },

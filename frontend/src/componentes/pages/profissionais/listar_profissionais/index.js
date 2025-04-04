@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./listarprofissionais.css";
 import ViewUser from "../../../funcoes_usuario/exibir";
 import DeleteUser from "../../../funcoes_usuario/exclusao";
@@ -10,7 +10,7 @@ const Profissionais = () => {
 
   const getProfissionais = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/professional/getAll`);
+      const response = await api.get(`/professional/getAll`);
       const data = response.data;
       setProfissionais(data);
     } catch (error) {

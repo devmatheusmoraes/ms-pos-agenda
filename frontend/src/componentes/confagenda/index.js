@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
-import axios from "axios";
+import api from "../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import SelectProfissional from "../selectprofissional";
 import SelectEvent from "../selectevento";
@@ -142,7 +142,7 @@ const transformFormData = (data) => ({
 
 const saveScheduleConfiguration = async (payload) => {
     try {
-        await axios.post("http://localhost:8080/scheduleConfiguration/save", payload);
+        await api.post("/scheduleConfiguration/save", payload);
         alert("Configuração de agenda salva com sucesso!");
     } catch (error) {
         throw new Error(

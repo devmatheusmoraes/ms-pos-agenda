@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./edicao.css";
 
 function EdicaoUsuario() {
@@ -15,8 +15,8 @@ function EdicaoUsuario() {
   const [usuario, setUsuario] = useState({});
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/user/getById/${id}`)
+    api
+      .get(`/user/getById/${id}`)
       .then((res) => {
         const data = res.data;
         setUsuario(data);
@@ -32,8 +32,8 @@ function EdicaoUsuario() {
   }, [id, setValue]);
 
   const onSubmit = (data) => {
-    axios
-      .put(`http://localhost:8080/usuario/update/${id}`, data)
+    api
+      .put(`/usuario/update/${id}`, data)
       .then((response) => {
         console.log("Usuario atualizado:", response.data);
         alert("Usuário atualizado com sucesso!");

@@ -1,6 +1,6 @@
 import styles from "./formevento.module.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 import SelectProcedimento from "../../selectprocedimento";
 import { useState } from "react";
@@ -35,7 +35,7 @@ export default function FormularioEvento() {
         console.log("Payload enviado:", payload); // Log para depuração
 
         try {
-            await axios.post("http://localhost:8080/event/save", payload);
+            await api.post("/event/save", payload);
             alert("Evento salvo com sucesso!");
             navigate("/evento");
         } catch (error) {

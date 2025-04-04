@@ -11,21 +11,21 @@ VALUES('Rua Jundiaí', '123', '28900-203','SP', 'Jundiaí', 'Down', 'Brasil', 'T
 
 -- Cliente
 INSERT INTO CLIENTE(id, nome_completo, nascimento, cpf, desativado, nome_social, endereco_id, indicacao, celular, telefone)
-VALUES(1, 'Adayana Roumillac', '1990-01-01', '111.111.111-11', false, 'Adayana', 1,'Insta', '(21)99999-9999', '2222-2222');
+VALUES(1, 'Diogo Roumillac', '1990-01-01', '111.111.111-11', false, 'Adayana', 1,'Insta', '(21)99999-9999', '2222-2222');
 
 INSERT INTO CLIENTE(id, nome_completo, nascimento, cpf, desativado, nome_social, endereco_id, indicacao, celular, telefone)
-VALUES(2, 'Flavia Procried', '1990-01-01', '222.111.222-11', false, 'Flavia', 2, 'X','(21)99999-9999', '2222-2222');
+VALUES(2, 'Flavia Viana', '1990-01-01', '222.111.222-11', false, 'Flavia', 2, 'X','(21)99999-9999', '2222-2222');
 
 
 -- Profissional
 INSERT INTO PROFISSIONAL(id, nome_completo, nascimento, cpf, desativado, nome_social, endereco_id, celular, telefone, ocupacao)
-VALUES(3,'Wt Ceará', '1990-01-01','333.333.333-33', false, 'Pernambucana', 2, '(21)99999-9999','1111-1111',0);
+VALUES(3,'Everton Santos', '1990-01-01','333.333.333-33', false, 'Pernambucana', 2, '(21)99999-9999','1111-1111',0);
 
 INSERT INTO PROFISSIONAL(id, nome_completo, nascimento, cpf, desativado, nome_social, endereco_id, celular, telefone, ocupacao)
 VALUES(4,'Flavia', '1990-01-01','111.111.111-11', false, 'Gbl', 3, '(21)99999-9999','1111-1111',1);
 
 INSERT INTO PROFISSIONAL(id, nome_completo, nascimento, cpf, desativado, nome_social, endereco_id, celular, telefone, ocupacao)
-VALUES(5,'Adayana', '1990-01-01','222.222.222-22', false, 'Roumillac', 1, '(21)99999-9999','1111-1111',0);
+VALUES(5,'Joana', '1990-01-01','222.222.222-22', false, 'Roumillac', 1, '(21)99999-9999','1111-1111',0);
 
 
 -- Procedimento

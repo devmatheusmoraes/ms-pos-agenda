@@ -1,6 +1,6 @@
 import styles from "./formprocedimento.module.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 export default function FormularioProcedimento() {
@@ -15,7 +15,7 @@ export default function FormularioProcedimento() {
   const onSubmit = async (data) => {
     console.log("Dados do formulário:", data);
     try {
-      await axios.post("http://localhost:8080/procedure/save", data);
+      await api.post("/procedure/save", data);
       alert("Procedimento salva com sucesso!");
       navigate("/procedimento");
     } catch (error) {

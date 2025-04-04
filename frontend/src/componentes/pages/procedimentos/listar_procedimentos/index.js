@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./listarprocedimentos.css";
 import DeleteUser from "../../../funcoes_usuario/exclusao";
 import ViewUser from "../../../funcoes_usuario/exibir";
@@ -10,8 +10,8 @@ const Procedimentos = () => {
 
   const getProcedimento = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8080/procedure/getAll"
+      const response = await api.get(
+        "/procedure/getAll"
       );
 
       const data = response.data;

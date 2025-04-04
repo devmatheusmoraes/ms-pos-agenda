@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./edicaocliente.css";
 import InputMask from "react-input-mask";
 import { useNavigate } from "react-router-dom";
@@ -19,8 +19,8 @@ function EdicaoCliente() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/customer/getById/${id}`)
+    api
+      .get(`/customer/getById/${id}`)
       .then((res) => {
         const data = res.data;
         setCliente(data);
@@ -36,8 +36,8 @@ function EdicaoCliente() {
   }, [id, setValue]);
 
   const onSubmit = (data) => {
-    axios
-      .put(`http://localhost:8080/cliente/update/${id}`, data)
+    api
+      .put(`/cliente/update/${id}`, data)
       .then((response) => {
         console.log("Cliente atualizado:", response.data);
         alert("Cliente atualizado com sucesso!");

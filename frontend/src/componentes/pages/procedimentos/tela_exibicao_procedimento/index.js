@@ -2,7 +2,7 @@ import "./exibicao.css";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EditUser from "../../../funcoes_usuario/edicao";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 
 function ExibicaoProcedimento() {
   const { id } = useParams();
@@ -10,8 +10,8 @@ function ExibicaoProcedimento() {
   const [exibicao, setExibicao] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/procedure/getById/${id}`)
+    api
+      .get(`/procedure/getById/${id}`)
       .then((response) => {
         setExibicao(response.data);
       })

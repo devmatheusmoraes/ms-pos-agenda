@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./listarespecialidades.css";
 import DeleteUser from "../../../funcoes_usuario/exclusao";
 import ViewUser from "../../../funcoes_usuario/exibir";
@@ -10,8 +10,8 @@ const Especialidades = () => {
 
   const getEspecialidade = async () => {
     try {
-      const response = await axios.get(
-        "http://localhost:8080/especialidade/getAll"
+      const response = await api.get(
+        "/especialidade/getAll"
       );
 
       const data = response.data;

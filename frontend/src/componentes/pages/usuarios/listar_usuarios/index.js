@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./listarusuarios.css";
 import DeleteUser from "../../../funcoes_usuario/exclusao";
 import ViewUser from "../../../funcoes_usuario/exibir";
@@ -10,7 +10,7 @@ const Usuarios = () => {
 
   const getUsuarios = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/user/getAll");
+      const response = await api.get("/user/getAll");
 
       const data = response.data;
 

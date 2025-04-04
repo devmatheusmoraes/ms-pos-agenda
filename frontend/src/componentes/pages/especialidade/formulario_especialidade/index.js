@@ -1,6 +1,6 @@
 import "./formularioespecialidade.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import { useNavigate } from "react-router-dom";
 
 export default function FormularioEspecialidade() {
@@ -14,7 +14,7 @@ export default function FormularioEspecialidade() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:8080/especialidade/save", data);
+      await api.post("/especialidade/save", data);
       alert("Especialidade salva com sucesso!");
       navigate("/menuespecialidade/especialidade");
     } catch (error) {

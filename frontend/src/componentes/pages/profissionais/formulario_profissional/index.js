@@ -1,6 +1,6 @@
 import styles from "./formularioprofissional.module.css";
 import {useForm} from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import InputMask from "react-input-mask";
 import {z} from "zod";
 import {zodResolver} from "@hookform/resolvers/zod";
@@ -45,8 +45,8 @@ export default function FormularioProfissional() {
             ...data,
         };
 
-        axios
-            .post("http://localhost:8080/professional/save", formattedData)
+        api
+            .post("/professional/save", formattedData)
             .then((response) => {
                 alert("Profissional salvo com sucesso!");
                 navigate("/profissionais");

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
-import axios from "axios";
+import api from "../../../api/axiosInstance";
 import { Controller } from "react-hook-form";
 
 const SelectProcedimento = ({ control, name, setProcedimentoIds }) => {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        axios
-            .get("http://localhost:8080/procedure/getAll")
+        api
+            .get("/procedure/getAll")
             .then((response) => {
                 const data = response.data;
                 const formattedOptions = data.map((item) => ({

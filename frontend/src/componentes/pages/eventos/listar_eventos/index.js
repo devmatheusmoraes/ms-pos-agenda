@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import "./listareventos.css";
+import api from "../../../../api/axiosInstance";
 import DeleteUser from "../../../funcoes_usuario/exclusao";
 import ViewUser from "../../../funcoes_usuario/exibir";
 import { Table } from "antd";
@@ -10,7 +10,7 @@ const Eventos = () => {
 
   const getEvento = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/event/getAll");
+      const response = await api.get("/event/getAll");
       const data = response.data;
       setEventos(data);
     } catch (error) {

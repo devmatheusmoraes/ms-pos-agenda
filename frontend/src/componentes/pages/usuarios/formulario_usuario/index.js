@@ -1,6 +1,6 @@
 import styles from "./formusuario.module.css";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import SelectProfissional from "../../../selectprofissional";
 import { useNavigate } from "react-router-dom";
 import { useState} from "react";
@@ -21,7 +21,7 @@ export default function FormularioUsuario() {
     const onSubmit = async (data) => {
     console.log(data);
     try {
-      await axios.post("http://localhost:8080/user/save", data);
+      await api.post("/user/save", data);
       alert("Usuário salvo com sucesso!");
       navigate("/usuario");
     } catch (error) {

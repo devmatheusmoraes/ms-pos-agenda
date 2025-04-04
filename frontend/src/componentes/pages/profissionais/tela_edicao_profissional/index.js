@@ -1,7 +1,7 @@
 import {useEffect, useState} from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import api from "../../../../api/axiosInstance";
 import "./edicaoprofissional.css";
 import InputMask from "react-input-mask";
 
@@ -20,8 +20,8 @@ function EdicaoProfissional() {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios
-            .get(`http://localhost:8080/professional/getById/${id}`)
+        api
+            .get(`/professional/getById/${id}`)
             .then((res) => {
                 const data = res.data;
                 setProfissional(data);
@@ -37,8 +37,8 @@ function EdicaoProfissional() {
     }, [id, setValue]);
 
     const onSubmit = (data) => {
-        axios
-            .put(`http://localhost:8080/professional/update/${id}`, data)
+        api
+            .put(`/professional/update/${id}`, data)
             .then((response) => {
                 console.log("Profissional atualizado:", response.data);
                 alert("Profissional atualizado com sucesso!");
