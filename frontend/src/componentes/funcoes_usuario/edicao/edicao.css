@@ -1,0 +1,7 @@
+.botao-edicao {
+    text-align: right;
+}
+
+.botao-edicao .edit-button .anticon {
+    font-size: 24px; /* Ajuste o tamanho conforme necessário */
+}

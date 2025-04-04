@@ -1,0 +1,25 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.nome {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.ocupacao {
+    color: #555;
+    font-size: 14px;
+    margin: 0;
+}

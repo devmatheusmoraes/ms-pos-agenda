@@ -1,0 +1,80 @@
+.formEventoContainer {
+    max-width: 25%;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formEventoContainer h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+.formEventoContainer label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333333;
+}
+
+.formEventoContainer [type="text"],
+.formEventoContainer [type="date"],
+.formEventoContainer input[type="number"],
+.formEventoContainer input[type="checkbox"],
+.formEventoContainer input[type="submit"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+
+.formEventoContainer input[type="text"]:focus,
+.formEventoContainer input[type="date"]:focus,
+.formEventoContainer focus {
+    border-color: #40a9ff;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.formEventoContainer input {
+    width: auto;
+    margin-right: 8px;
+}
+
+
+.formEventoContainer .error {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 16px;
+}
+
+.button {
+    background-color: #f5f5f5;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+
+.button:hover {
+    background-color: #e6f4ff;
+}
+

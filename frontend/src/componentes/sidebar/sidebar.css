@@ -1,0 +1,13 @@
+.header-logo,
+.sider-logo {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px;
+}
+
+.header-logo img,
+.sider-logo img {
+  max-width: 8%;
+  height: auto;
+}

@@ -1,0 +1,22 @@
+.listarusuarios-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.listarusuarios-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.listarusuarios-container p {
+  font-size: 18px;
+}
+
+.usuarios {
+  border: 1px solid #ccc;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

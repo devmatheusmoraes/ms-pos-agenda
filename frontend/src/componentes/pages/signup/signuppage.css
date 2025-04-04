@@ -1,0 +1,20 @@
+.signup-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 15%;
+    gap: 10px;
+    height: 20vh;
+}
+
+.input-antd{
+    width: 300px;
+}
+
+.error-message{
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: -8px;
+    margin-bottom: 16px;
+}

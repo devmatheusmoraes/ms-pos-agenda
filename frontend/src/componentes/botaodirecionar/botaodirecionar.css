@@ -1,0 +1,34 @@
+.botaodirecionar {
+  position: relative;
+  color: #fff;
+  text-decoration: none;  
+}
+  
+.botaodirecionar button {
+  border: none; /* Remover borda */
+  padding: 20px;
+  font-size: large;
+  background-color: #fff;
+  margin:auto
+}
+
+.botaodirecionar button:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #c3698d;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.botaodirecionar button:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}

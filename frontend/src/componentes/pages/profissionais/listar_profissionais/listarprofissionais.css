@@ -1,0 +1,17 @@
+.listarmedicos-container {
+  font-family: Arial, sans-serif;
+  padding: 12px;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.listarmedicos-container p {
+  font-size: 12px;
+  padding: 0;
+}
+
+.listarmedicos-container .MuiTableCell-root {
+  padding: 0%; /* Use !important para garantir que o estilo seja aplicado */
+  
+}

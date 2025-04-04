@@ -1,0 +1,83 @@
+.formContainerCliente {
+  max-width: 40%;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.enderecoContainer {
+  margin-top: 48px;
+}
+
+.formContainerCliente h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333333;
+  text-align: center;
+}
+
+.formContainerCliente label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333333;
+}
+
+.formContainerCliente input[type="text"],
+.formContainerCliente input[type="date"],
+.formContainerCliente input[type="number"],
+.formContainerCliente input[type="checkbox"],
+.formContainerCliente input[type="submit"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+
+.formContainerCliente input[type="text"]:focus,
+.formContainerCliente input[type="date"]:focus,
+.formContainerCliente input:focus {
+  border-color: #40a9ff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.formContainerCliente input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.formContainerCliente .error {
+  color: #ff4d4f;
+  font-size: 12px;
+  margin-top: -8px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.button {
+  background-color: #f5f5f5;
+  border: none;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  width: 30%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 45px;
+}
+
+.button:hover {
+  background-color: #e6f4ff;
+}

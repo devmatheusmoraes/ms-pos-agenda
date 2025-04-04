@@ -1,0 +1,39 @@
+.gridHeader {
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 10px;
+    font-weight: bold;
+    border: 1px solid #d9d9d9;
+    white-space: nowrap; /* Evita que o texto quebre em múltiplas linhas */
+    overflow: hidden; /* Impede que o conteúdo ultrapasse a largura da coluna */
+    text-overflow: ellipsis; /* Exibe "..." se o conteúdo for maior que a coluna */
+}
+
+.gridContainer {
+    width: 80%;
+    max-width: 100%; /* Certifique-se de que o contêiner ocupe toda a largura */
+    display: inline-block;
+    vertical-align: top;
+    align-content: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-left: 2px;
+    width: 100%;
+}
+
+.gridCell {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+}
+
+.gridCellButton {
+    width: 100%;
+}

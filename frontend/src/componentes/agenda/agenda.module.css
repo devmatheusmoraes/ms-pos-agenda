@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.card {
+    flex: 1 1 calc(33.333% - 16px); /* Ajusta a largura dos cards */
+    box-sizing: border-box;
+}

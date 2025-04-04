@@ -1,0 +1,56 @@
+.deleteuser {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%; /* Certifique-se de que o contêiner pai tenha uma altura definida */
+}
+
+.deleteuser button {
+  border: none;
+  background: none; /* Remove o fundo padrão */
+  padding: 0; /* Remove qualquer padding padrão */
+  cursor: pointer; /* Adiciona o cursor de ponteiro ao passar sobre o botão */
+  outline: none; /* Remove a borda de foco no botão */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.deleteuser button {
+  border: none;
+  background: none; /* Remove o fundo padrão */
+  padding: 0; /* Remove qualquer padding padrão */
+  cursor: pointer; /* Adiciona o cursor de ponteiro ao passar sobre o botão */
+  outline: none; /* Remove a borda de foco no botão */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Necessário para o pseudo-elemento */
+  transition: background-color 0.3s ease; /* Adiciona uma transição suave para a cor de fundo */
+}
+
+.deleteuser button::after {
+  margin-bottom: -7px;
+  content: ""; /* Cria o pseudo-elemento */
+  position: absolute;
+  bottom: -5px; /* Ajuste conforme necessário */
+  left: 0;
+  right: 0;
+  height: 2px; /* Altura da linha sublinhada */
+  background-color: black; /* Cor da linha sublinhada */
+  transform: scaleX(0); /* Inicialmente escondido */
+  transform-origin: bottom left; /* Define o ponto de origem da transformação */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.deleteuser button:hover {
+  background-color: rgb(238, 238, 238); /* Cor de fundo ao passar o mouse */
+  border-radius: 5px;
+  opacity: 1;
+}
+
+.deleteuser button:hover::after {
+  margin-bottom: -7px;
+  transform: scaleX(1); /* Mostra a linha sublinhada ao passar o mouse */
+}

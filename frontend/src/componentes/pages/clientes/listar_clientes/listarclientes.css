@@ -1,0 +1,17 @@
+.listarpacientes-container {
+  font-family: Arial, sans-serif;
+  padding: 12px;
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.listarpacientes-container p {
+  font-size: 12px;
+  padding: 0;
+}
+
+.listarpacientes-container .MuiTableCell-root {
+  padding: 0%; /* Use !important para garantir que o estilo seja aplicado */
+  
+}
