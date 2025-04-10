@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deploy
+  namespace: dev
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      initContainers:
+        - name: wait-for-mysql
+          image: busybox:latest
+          command:
+            - sh
+            - "-c"
+            - |
+              until nc -z -v -w 10 mysql-svc:3306; do
+              echo "waiting for mysql...";
+              sleep 5;
+              done
+      containers:
+        - name: backend
+          image: matheuxmoraes/backend-app:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DATABASE_HOST
+              value: mysql-svc
+            - name: DATABASE_PORT
+              value: "3306"
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql-svc:3306/agendaweb
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-svc
+  namespace: dev
+spec:
+  type: ClusterIP
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: backend

@@ -22,7 +22,7 @@ services:
     build:
       context: ./backend
       dockerfile: docker/Dockerfile
-    image: matheuxmoraes/backend-app:1.0
+    image: matheuxmoraes/backend-app:latest
     container_name: backend_container
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://mysql_container:3306/agendaweb
@@ -41,7 +41,7 @@ services:
     build:
       context: ./frontend
       dockerfile: docker/Dockerfile
-    image: matheuxmoraes/frontend-app:1.0
+    image: matheuxmoraes/frontend-app:latest
     container_name: frontend_container
     ports:
       - "3000:3000"

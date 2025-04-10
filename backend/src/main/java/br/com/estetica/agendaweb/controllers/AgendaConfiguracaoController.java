@@ -89,8 +89,7 @@ public class AgendaConfiguracaoController {
     }
 
     @Operation(summary = "Excluir uma Configuração de Agenda")
-    @GetMapping("/delete/{id}")
-    @DeleteMapping
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         agendaConfiguracaoService.deleteById(id);
         return ResponseEntity.ok().body("Configuração de agenda excluída com sucesso");
