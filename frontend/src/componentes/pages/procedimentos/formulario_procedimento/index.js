@@ -14,6 +14,7 @@ export default function FormularioProcedimento() {
 
   const onSubmit = async (data) => {
     console.log("Dados do formulário:", data);
+    console.log(api.defaults.baseURL);
     try {
       await api.post("/procedure/save", data);
       alert("Procedimento salva com sucesso!");

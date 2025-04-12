@@ -4,7 +4,7 @@ metadata:
   name: frontend-deploy
   namespace: dev
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -16,10 +16,11 @@ spec:
       containers:
         - name: frontend
           image: matheuxmoraes/frontend-app:latest
+
           ports:
             - containerPort: 3000
           env:
-            - name: API_URL
+            - name: REACT_APP_API_URL
               value: http://backend-svc:8080
 ---
 apiVersion: v1
