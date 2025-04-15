@@ -16,12 +16,14 @@ spec:
       containers:
         - name: frontend
           image: matheuxmoraes/frontend-app:latest
-
           ports:
             - containerPort: 3000
           env:
             - name: REACT_APP_API_URL
               value: http://backend-svc:8080
+          envFrom:
+            - configMapRef:
+                name: frontend-config
 ---
 apiVersion: v1
 kind: Service
@@ -36,3 +38,12 @@ spec:
       nodePort: 32000
   selector:
     app: frontend
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: dev
+data:
+  REACT_APP_API_URL: "http://backend-svc:8080"
