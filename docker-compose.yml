@@ -37,7 +37,7 @@ services:
       - backend-network
       - shared-network
     healthcheck:
-      test: [ "CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      test: [ "CMD", "curl", "-f", "http://localhost:8080/api/actuator/health"]
       interval: 30s
       retries: 3
       timeout: 10s
@@ -50,7 +50,7 @@ services:
     image: matheuxmoraes/frontend-app:latest
     container_name: frontend_container
     environment:
-      REACT_APP_API_URL: http://localhost:8080
+      REACT_APP_API_URL: http://localhost:8080/api
     ports:
       - "3000:3000"
     networks:

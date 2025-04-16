@@ -20,7 +20,7 @@ spec:
   selector:
     matchLabels:
       app: mysql
-  replicas: 1
+  replicas: 4
   template:
     metadata:
       labels:
@@ -50,7 +50,7 @@ metadata:
   name: mysql-svc
   namespace: dev
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 3306
       targetPort: 3306

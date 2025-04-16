@@ -4,7 +4,7 @@ metadata:
   name: frontend-deploy
   namespace: dev
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: frontend
@@ -20,7 +20,7 @@ spec:
             - containerPort: 3000
           env:
             - name: REACT_APP_API_URL
-              value: http://backend-svc:8080
+              value: http://localhost:31000/api
           envFrom:
             - configMapRef:
                 name: frontend-config
@@ -46,4 +46,4 @@ metadata:
   name: frontend-config
   namespace: dev
 data:
-  REACT_APP_API_URL: "http://backend-svc:8080"
+  REACT_APP_API_URL: "http://backend-svc:31000"
